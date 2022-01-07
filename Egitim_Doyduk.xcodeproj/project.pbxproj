@@ -57,6 +57,8 @@
 		68FBCC2027832B9A008A4FEE /* LoginTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FBCC1E27832B9A008A4FEE /* LoginTextView.swift */; };
 		68FBCC2327833213008A4FEE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FBCC2227833213008A4FEE /* CategoryView.swift */; };
 		68FBCC2427833213008A4FEE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FBCC2227833213008A4FEE /* CategoryView.swift */; };
+		A54020882788657A0051307E /* CheifSpecialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54020872788657A0051307E /* CheifSpecialView.swift */; };
+		A540208A27886DF60051307E /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540208927886DF50051307E /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		68FBCC1A27832575008A4FEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		68FBCC1E27832B9A008A4FEE /* LoginTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextView.swift; sourceTree = "<group>"; };
 		68FBCC2227833213008A4FEE /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		A54020872788657A0051307E /* CheifSpecialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheifSpecialView.swift; sourceTree = "<group>"; };
+		A540208927886DF50051307E /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,7 +242,9 @@
 				685D311427859F18000F691C /* DishesCell.swift */,
 				685D311227859DC4000F691C /* CategoryDetailView.swift */,
 				685D31162785A316000F691C /* CategoryDetailViewModel.swift */,
+				A540208927886DF50051307E /* TitleView.swift */,
 				6886B61727880B6A0005E406 /* DishesDetailView.swift */,
+				A54020872788657A0051307E /* CheifSpecialView.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -372,8 +378,10 @@
 				68FBCC2327833213008A4FEE /* CategoryView.swift in Sources */,
 				685D310F278590E6000F691C /* CategoryViewModel.swift in Sources */,
 				68FBCBD627832070008A4FEE /* ContentView.swift in Sources */,
+				A540208A27886DF60051307E /* TitleView.swift in Sources */,
 				685D310527858477000F691C /* Constants.swift in Sources */,
 				685D310D2785890D000F691C /* EgitimNavavbar.swift in Sources */,
+				A54020882788657A0051307E /* CheifSpecialView.swift in Sources */,
 				685D310827858477000F691C /* DoydukModel.swift in Sources */,
 				685D310927858477000F691C /* Service.swift in Sources */,
 				68FBCC1B27832575008A4FEE /* LoginView.swift in Sources */,

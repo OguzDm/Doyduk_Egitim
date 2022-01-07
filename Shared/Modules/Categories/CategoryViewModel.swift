@@ -16,6 +16,7 @@ enum ViewState {
 class CategoryViewModel : BaseVieModel {
     
     @Published var categories: [DoydukResult] =  [DoydukResult]()
+    @Published var chiefSpecial: DoydukResult?
    
 }
 extension CategoryViewModel {
@@ -39,5 +40,27 @@ extension CategoryViewModel {
             }
         }
     }
+    
+    public func fetchCheifSpecial() {
+        
+        state = .loading
+        let no = Int.random(in: 1..<34)
+        Service.shared.fetchRequest(endpoint: .special(no: no), model: CheifSpecielModel.self) { [weak self] response in
+            switch response {
+            case .success(let model):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self?.chiefSpecial = model.result
+                    self?.state = .ready
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.state = .error
+                    self?.errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
+    
+    
 }
 

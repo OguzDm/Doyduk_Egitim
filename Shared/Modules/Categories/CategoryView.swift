@@ -61,12 +61,18 @@ struct CategoryView: View {
                     
                     
                     //4 şefin önerisi
+                    CheifSpecialView(viewModel: viewModel)
+                        .offset(y: 15)
+                        
+                        
                     
                 }
+                .ignoresSafeArea(.all, edges: .bottom)
                 
             }
         }.onAppear {
             viewModel.fetchCategories()
+            viewModel.fetchCheifSpecial()
         }
     }
 }

@@ -15,6 +15,13 @@ struct DoydukModel: Codable {
     let message: String?
 }
 
+struct CheifSpecielModel: Codable{
+    let status: String?
+    let statusCode: Int?
+    let result: DoydukResult?
+    let message: String?
+}
+
 // MARK: - Result
 struct DoydukResult: Codable,Hashable {
     let id: Int?
