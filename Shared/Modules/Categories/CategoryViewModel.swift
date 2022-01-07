@@ -23,9 +23,8 @@ extension CategoryViewModel {
     public func fetchCategories() {
         
         state = .loading
-        Service.shared.fetchRequest(endpoint: .categories) {[weak self] response in
-         
-            
+        
+        Service.shared.fetchRequest(endpoint: .categories, model: DoydukModel.self) { [weak self] response in
             switch response {
             case .success(let model):
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -45,6 +44,28 @@ extension CategoryViewModel {
                 }
             }
         }
+//        Service.shared.fetchRequest(endpoint: .categories) {[weak self] response in
+//
+//
+//            switch response {
+//            case .success(let model):
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                    self?.categories = model.result ?? [DoydukResult]()
+//                    self?.state = .ready
+//                }
+//
+//                /*DispatchQueue.main.async {
+//                    self?.categories = model.result ?? [DoydukResult]()
+//                    self?.state = .ready
+//                }*/
+//
+//            case .failure(let error):
+//                DispatchQueue.main.async {
+//                    self?.state = .error
+//                    self?.errorMessage = error.localizedDescription
+//                }
+//            }
+//        }
     }
 }
 

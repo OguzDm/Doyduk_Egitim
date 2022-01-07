@@ -38,9 +38,8 @@ extension CategoryDetailViewModel {
     public func fetchDishes() {
         
         state = .loading
-
-        Service.shared.fetchRequest(endpoint: .dishes) {[weak self] response in
-         
+        
+        Service.shared.fetchRequest(endpoint: .dishes, model: DoydukModel.self) { [weak self] response in
             
             switch response {
             case .success(let model):
@@ -56,6 +55,25 @@ extension CategoryDetailViewModel {
                 }
             }
         }
+        
+
+//        Service.shared.fetchRequest(endpoint: .dishes) {[weak self] response in
+//
+//
+//            switch response {
+//            case .success(let model):
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                    self?.allDishes = model.result ?? [DoydukResult]()
+//                    self?.state = .ready
+//                }
+//
+//            case .failure(let error):
+//                DispatchQueue.main.async {
+//                    self?.state = .error
+//                    self?.errorMessage = error.localizedDescription
+//                }
+//            }
+//        }
     }
 }
 

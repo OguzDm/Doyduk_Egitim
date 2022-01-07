@@ -11,9 +11,21 @@ class Service {
     
     static let shared = Service()
     
-    enum endpoint: String {
-        case categories = "categories"
-        case dishes = "dishes"
+    enum endpoint{
+        case categories
+        case dishes
+        case special
+        
+        var query: String {
+            switch self {
+            case .categories:
+                return "categories"
+            case .dishes:
+                return "dishes"
+            case .special:
+                return "dishes/1"
+            }
+        }
     }
     
     enum DoydukError:Error {
@@ -38,9 +50,11 @@ class Service {
         }
     }
     
-    func fetchRequest(endpoint : endpoint,completion: @escaping (Result<DoydukModel, DoydukError>) -> ()){
+    
+    
+    func fetchRequest<T: Decodable>(endpoint : endpoint,model: T.Type,completion: @escaping (Result<T, DoydukError>) -> Void){
         
-        let requestString = "\(Constants.baseURL)\(endpoint.rawValue)"
+        let requestString = "\(Constants.baseURL)\(endpoint.query)"
         
         guard let requestURL = URL(string: requestString) else {
             completion(.failure(.urlError))
@@ -60,10 +74,9 @@ class Service {
             }
             
             do {
-                let response = try JSONDecoder().decode(DoydukModel.self, from: data)
+                let response = try JSONDecoder().decode(T.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(response))
-                    print(response)
                 }
             }
             catch{
