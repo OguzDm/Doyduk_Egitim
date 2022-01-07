@@ -48,7 +48,7 @@ struct CategoryDetailView: View {
                     ScrollView{
                         
                         ForEach(viewModel.dishes,id:\.self) { item in
-                            NavigationLink(destination: DishesDetailView()) {
+                            NavigationLink(destination: DishesDetailView(userName: username, tableNo: tableNo, content: item,category: viewModel.category)) {
                                
                                 DishesCell(content: item)
                             }
