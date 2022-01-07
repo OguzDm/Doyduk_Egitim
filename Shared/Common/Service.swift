@@ -14,16 +14,16 @@ class Service {
     enum endpoint{
         case categories
         case dishes
-        case special
+        case special(no:Int)
         
-        var query: String {
+        var query:String {
             switch self {
             case .categories:
                 return "categories"
             case .dishes:
                 return "dishes"
-            case .special:
-                return "dishes/1"
+            case .special(let no):
+                return "dishes/\(no)"
             }
         }
     }
